@@ -1,0 +1,43 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "A simple website to analyze the lyrics of Bruce Springsteen",
+  "author": "Stewart Morris",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "chart.js": "^2.9.1",
+    "nuxt": "^2.0.0",
+    "vue-chartjs": "^3.4.2",
+    "vue-highlight-words": "^1.2.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/vuetify": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "node-sass": "^4.13.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^2.6.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.16.4"
+  }
+}
