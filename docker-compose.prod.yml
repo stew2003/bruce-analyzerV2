@@ -45,7 +45,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile-prod
-      args:
+      environment:
         API_URL: ${API_URL}
         API_URL_BROWSER: ${API_URL_BROWSER}
     environment:
