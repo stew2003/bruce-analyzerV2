@@ -1,7 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
 
-console.log(process.env)
-
 export default {
   mode: 'universal',
   /*
@@ -55,7 +53,10 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'http://api:8080',
+    browserBaseURL: 'http://localhost/api/v1'
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
