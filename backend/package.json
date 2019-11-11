@@ -4,7 +4,8 @@
   "description": "A simple website to analyze the lyrics of Bruce Springsteen",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "Stewart Morris",
   "license": "ISC",
