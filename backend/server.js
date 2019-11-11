@@ -1,3 +1,4 @@
+setTimeout(function() {
 const express = require('express')
 const cors = require('cors')
 const api = require('./routes/api')
@@ -24,3 +25,4 @@ app.listen(process.env.PORT, process.env.HOST, async () => {
     `Backend api for Bruce Analyzer listening on ${process.env.HOST}:${process.env.PORT}`
   )
 })
+}, 4000)
