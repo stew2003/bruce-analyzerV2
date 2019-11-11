@@ -8,4 +8,4 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+RUN API_URL=${API_URL} API_URL_BROSWER=${API_URL_BROSWER} npm run build
