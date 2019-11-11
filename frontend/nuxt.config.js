@@ -55,7 +55,7 @@ export default {
    */
   axios: {
     baseURL: 'http://api:8080',
-    browserBaseURL: 'http://localhost/api/v1'
+    browserBaseURL: 'http://www.bruceanalyzer.com/api/v1'
   },
   /*
    ** vuetify module configuration
