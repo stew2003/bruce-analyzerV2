@@ -6,7 +6,6 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - ' + 'Bruce Analyzer',
     title: 'Bruce Analyzer',
     meta: [
       { charset: 'utf-8' },
