@@ -34,6 +34,7 @@ services:
       HOST: ${API_HOST}
     ports:
       - 8080:8080
+    restart: always
     volumes:
       - ./backend:/app
     command: npm run start
@@ -51,6 +52,7 @@ services:
       NODE_ENV: production
     ports:
       - 3000:3000
+    restart: always
     command: npm run start
 
   ngnix:
@@ -59,6 +61,7 @@ services:
     depends_on:
       - api
       - frontend
+    restart: always
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
