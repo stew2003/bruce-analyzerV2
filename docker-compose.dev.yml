@@ -49,8 +49,6 @@ services:
       NUXT_PORT: 3000
       NUXT_HOST: 0.0.0.0
       NODE_ENV: development
-      API_URL: ${API_URL}
-      API_URL_BROWSER: ${API_URL_BROWSER}
     ports:
       - 3000:3000
     volumes:

@@ -48,6 +48,59 @@
         </v-card-actions>
       </v-card>
     </v-row>
+    <v-row align="center">
+      <v-col sm="8" cols="12">
+        <span class="title font-regular"
+          >The Bruce Analyzer is a database of every song on every Bruce
+          Springsteen major label release from
+          <i>Greetings From Asbury Park</i> (1973) to
+          <i>Chapter and Verse</i> (2016) -- 20 albums.
+          <br />
+          <br />
+          All total, Bruce Analyzer contains 306 rocking songs. Testament to
+          Bruce's famous vocabulary, there are ___ different words in these
+          amazing songs.
+          <br />
+          <br />
+        </span>
+        <span class="headline">To use:</span>
+        <ul>
+          <li>
+            Type a word or phrase (e.g "love") into the input space provided and
+            hit enter.
+          </li>
+          <li>
+            Immediately, you will see the number of appearances of that word or
+            phrase in each of Bruce's albums ("love" rarely shows up in Bruce's
+            first four albums but appears frequently in <i>The River</i>)
+          </li>
+          <li>
+            Click the right arrow, located in the bottom right of the graph, to
+            see a similar graph by year instead of by album.
+          </li>
+          <li>
+            Click again to see the total number of uses of the word or phrase in
+            all of Bruce's songs.
+          </li>
+          <li>
+            Click it one more time to see each song, its album and year, and the
+            number of uses of the word or phrase ("love" appears in
+            <i>The Rising</i>'s "Into the Fire" 25 times, 10 more times than in
+            any other song).
+          </li>
+          <li>
+            Click on any song in the table to see its complete lyrics with the
+            search word or phrase highlighted.
+          </li>
+          <li>
+            Experiment and enjoy!
+          </li>
+        </ul>
+      </v-col>
+      <v-col sm="4" cols="12">
+        <v-img :src="require('~/assets/born to run.jpg')"></v-img>
+      </v-col>
+    </v-row>
 
     <v-dialog v-model="showSong" width="500px">
       <v-card>
@@ -77,8 +130,8 @@ export default {
             {
               ticks: {
                 callback(value) {
-                  if (value.length > 4) {
-                    return value.substr(0, 6) + '...' // truncate
+                  if (value.length > 12) {
+                    return value.substr(0, 12) + '...' // truncate
                   } else {
                     return value
                   }

@@ -6,7 +6,8 @@ module.exports = {
       labels: [],
       datasets: [{
         label: label,
-        data: []
+        data: [],
+        backgroundColor: '#1E88E5'
       }]
     }
   },
