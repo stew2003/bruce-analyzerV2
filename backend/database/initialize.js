@@ -16,20 +16,37 @@ const initialize = async() => {
 
       const queryAlbums = []
       const querySongs = []
+      const words = { }
 
       // format the query data
       let aid = 1
-      for (album of albums) {
+      for (const album of albums) {
         queryAlbums.push([album.album, parseInt(album.year)])
-        for (song of album.songs) {
+        for (const song of album.songs) {
           let songInfo = await lyrics.parseLyrics('Bruce Springsteen', song)
+
           // replace all new lines with a special character
           let prettyLyrics = songInfo.lyrics.replace(/\r?\n|\r/g, "&&")
+
+          // lowercase and normalize lyrics
+          let normalizedLyrics = prettyLyrics.toLowerCase().replace(/[^\w\s?']|_/g, " ").replace(/\s+/g, " ").trim()
+
+          // get dictionary of all words
+          let lyricsList = normalizedLyrics.split(' ')
+          for (const word of lyricsList) {
+            if (words[word] === undefined) {
+              words[word] = 0
+            }
+            words[word]++
+          }
+
           // format Album Id, Song Title, Normalized Lyrics, Pretty Lyrics
-          querySongs.push([aid, songInfo.song, " " + prettyLyrics.toLowerCase().replace(/[^\w\s?']|_/g, " ").replace(/\s+/g, " ").trim() + " ", prettyLyrics.replace(/&&,/g, '\n').trim()])
+          querySongs.push([aid, songInfo.song, " " + normalizedLyrics + " ", prettyLyrics.replace(/&&,/g, '\n').trim()])
         }
         aid++
       }
+
+      console.log(Object.keys(words).length)
 
       await maintenance.addAlbums(queryAlbums)
       await maintenance.addSongs(querySongs)

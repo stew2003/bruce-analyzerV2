@@ -58,7 +58,7 @@
           <br />
           <br />
           All total, Bruce Analyzer contains 306 rocking songs. Testament to
-          Bruce's famous vocabulary, there are ___ different words in these
+          Bruce's famous vocabulary, there are 5690 distinct words in these
           amazing songs.
           <br />
           <br />
